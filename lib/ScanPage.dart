@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class AdminPage extends StatelessWidget {
+class ScanPage extends StatelessWidget {
 
-AdminPage({this.username});
-final String username;
+  ScanPage({this.username});
+  final String username;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Welcome Admin"),),
+      appBar: AppBar(title: Text("Welkom medewerker"),),
       body: Column(
         children: <Widget>[
           Text('Hallo $username', style: TextStyle(fontSize: 20.0),),
 
           RaisedButton(
-            child: Text("Log uit"),
-            onPressed: (){
+            child: Text("Logout"),
+            onPressed: () {
               Navigator.pushReplacementNamed(context,'/MyHomePage');
             },
           ),

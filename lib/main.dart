@@ -40,7 +40,7 @@ TextEditingController pass=new TextEditingController();
 String msg='';
 
 Future<List> _login() async {
-  final response = await http.post("http://10.0.2.2/my_store/login.php", body: {
+  final response = await http.post("http://10.42.0.1/my_store/login.php", body: {
     "username": user.text,
     "password": pass.text,
   });
@@ -54,7 +54,7 @@ Future<List> _login() async {
   }else{
     if(datauser[0]['level']=='admin'){
        Navigator.pushReplacementNamed(context, '/AdminPage');
-    }else if(datauser[0]['level']=='member'){
+    } else if(datauser[0]['level']=='member') {
       Navigator.pushReplacementNamed(context, '/MemberPage');
     }
 
@@ -75,19 +75,19 @@ Future<List> _login() async {
         child: Center(
           child: Column(
             children: <Widget>[
-              Text("Username",style: TextStyle(fontSize: 18.0),),
+              Text("Email",style: TextStyle(fontSize: 18.0),),
               TextField(   
                 controller: user,                
                 decoration: InputDecoration(
-                  hintText: 'Username'
+                  hintText: 'Email adress'
                 ),           
                 ),
-              Text("Password",style: TextStyle(fontSize: 18.0),),
+              Text("Wachtwoord",style: TextStyle(fontSize: 18.0),),
               TextField(  
                 controller: pass,  
                 obscureText: true,                
                  decoration: InputDecoration(
-                  hintText: 'Password'
+                  hintText: 'Wachtwoord'
                 ),                
                 ),
               
