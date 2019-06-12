@@ -40,7 +40,7 @@ TextEditingController pass=new TextEditingController();
 String msg='';
 
 Future<List> _login() async {
-  final response = await http.post("http://10.42.0.1/my_store/login.php", body: {
+  final response = await http.post("http://10.42.0.1/rest_api/login.php", body: {
     "username": user.text,
     "password": pass.text,
   });
@@ -52,18 +52,16 @@ Future<List> _login() async {
           msg="Login Fail";
         });
   }else{
-    if(datauser[0]['level']=='admin'){
+    if(datauser[0]['role_id']=='1'){
        Navigator.pushReplacementNamed(context, '/AdminPage');
-    } else if(datauser[0]['level']=='member') {
+    } else if(datauser[0]['role_id']=='2') {
       Navigator.pushReplacementNamed(context, '/MemberPage');
     }
 
     setState(() {
           username= datauser[0]['username'];
         });
-
   }
-
   return datauser;
 }
 
@@ -99,7 +97,7 @@ Future<List> _login() async {
               ),
 
               Text(msg,style: TextStyle(fontSize: 20.0,color: Colors.red),)
-             
+
 
             ],
           ),

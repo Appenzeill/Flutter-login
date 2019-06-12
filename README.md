@@ -1,8 +1,4 @@
-# loginflutter
+# QR-code scanner voor school project.
 
-A new Flutter project.
+Deze app is gemaakt voor een school project. Deze app kan verbinden met een database doormiddel van een rest api.
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
