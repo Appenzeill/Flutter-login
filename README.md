@@ -1,4 +1,7 @@
-# QR-code scanner voor school project.
+# QR-code scanner.
 
-Deze app is gemaakt voor een school project. Deze app kan verbinden met een database doormiddel van een rest api.
+This is a simple QR-code scan app made for a school assignment. This app uses a CRUD rest api to connect with the database.
 
+This api can be accessed from https://github.com/Appenzeill/rest_api
+
+It is very insecure and flawed.
